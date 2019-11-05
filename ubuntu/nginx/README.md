@@ -53,7 +53,7 @@ If you want to install Nginx without Let's Encrypt:
 . ./install-nginx.sh
 ```
 
-### Install Nginx with Let's Encript.sh
+### Install Nginx with Let's Encript
 
 If you want to install Nginx with Let's Encrypt:
 
