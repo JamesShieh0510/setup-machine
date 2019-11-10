@@ -47,10 +47,10 @@ sudo touch /var/www/$hostname/html/index.html
 sudo cat <<EOF | sudo tee /var/www/$hostname/html/index.html
 <html>
     <head>
-        <title>Welcome to Example.com!</title>
+        <title>Welcome to $hostname</title>
     </head>
     <body>
-        <h1>Success!  The example.com server block is working!</h1>
+        <h1>Success!  The $hostname server block is working!</h1>
     </body>
 </html>
 EOF
@@ -63,7 +63,7 @@ server {
         root /var/www/$hostname/html;
         index index.html index.htm index.php index.nginx-debian.html;
 
-        server_name $hostname www.$hostname;
+        server_name $hostname;
 
         location / {
                 try_files \$uri \$uri/ =404;
