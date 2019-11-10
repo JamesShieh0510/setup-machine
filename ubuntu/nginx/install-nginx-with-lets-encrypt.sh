@@ -28,13 +28,15 @@ sudo ufw status
 
 # Obtaining an SSL Certificate
 #echo "$email" | sudo certbot --nginx -d $hostname -d www.$hostname
+#if you want to add www sub-domain:
+#echo 'A' | sudo certbot --nginx -d $hostname -d www.$hostname -m $email --redirect
 if [ "$redirect_https" = "true" ]
 then
 	#Automatically redirect all HTTP traffic to HTTPS
-	echo 'A' | sudo certbot --nginx -d $hostname -d www.$hostname -m $email --redirect
+	echo 'A' | sudo certbot --nginx -d $hostname -m $email --redirect
 else
 	#Do not automatically redirect all HTTP traffic to HTTPS
-	echo 'A' | sudo certbot --nginx -d $hostname -d www.$hostname -m $email --no-redirect
+	echo 'A' | sudo certbot --nginx -d $hostname -m $email --no-redirect
 fi
 
 # Verifying Certbot Auto-Renewal
