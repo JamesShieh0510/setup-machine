@@ -63,7 +63,7 @@ server {
         root /var/www/$hostname/html;
         index index.html index.htm index.php index.nginx-debian.html;
         #server_name $hostname www.$hostname;
-        server_name $hostname
+        server_name $hostname;
 
         location / {
                 try_files \$uri \$uri/ =404;
